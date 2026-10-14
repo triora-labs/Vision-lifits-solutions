@@ -32,13 +32,13 @@ export default function ContactPage() {
             <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
               <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-red-600 font-bold">Contact Us</span>
+              <span className="text-[#423887] font-bold">Contact Us</span>
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-100 text-xs font-bold text-red-600 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-xs font-bold text-[#423887] uppercase tracking-wider">
               Direct Technical Line to Ramesh Vilasagar
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12]">
-              Contact Vision Lifts & <span className="text-red-600">Solutions.</span>
+              Contact Vision Lifts & <span className="text-[#423887]">Solutions.</span>
             </h1>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               Have an upcoming construction project, need a free site survey in Karimnagar or across Telangana, or require urgent 24/7 elevator maintenance? Reach out directly to our engineering desk.
@@ -68,7 +68,7 @@ export default function ContactPage() {
               {/* Coordinates Cards */}
               <div className="space-y-3.5">
                 <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center font-bold text-base shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-purple-50 text-[#423887] flex items-center justify-center font-bold text-base shrink-0">
                     📍
                   </div>
                   <div>
@@ -89,7 +89,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Direct Founder & Support Line</h4>
                     <p className="text-base font-extrabold text-slate-900 mt-0.5">
-                      <a href={`tel:${COMPANY_INFO.phoneRaw}`} className="hover:text-red-600 transition-colors">
+                      <a href={`tel:${COMPANY_INFO.phoneRaw}`} className="hover:text-[#423887] transition-colors">
                         {COMPANY_INFO.phone}
                       </a>
                     </p>
@@ -106,7 +106,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Project Quotation Email</h4>
                     <p className="text-sm font-bold text-slate-900 mt-0.5 break-all">
-                      <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-red-600 transition-colors">
+                      <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-[#423887] transition-colors">
                         {COMPANY_INFO.email}
                       </a>
                     </p>
@@ -157,7 +157,7 @@ export default function ContactPage() {
             <div className="lg:col-span-7">
               <div className="bg-slate-50/80 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm">
                 <div className="mb-6">
-                  <span className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-bold uppercase tracking-wider">
+                  <span className="px-3 py-1 bg-red-100 text-[#423887] rounded-full text-xs font-bold uppercase tracking-wider">
                     Site Survey & Quotation Form
                   </span>
                   <h3 className="text-2xl font-extrabold text-slate-900 mt-2">
@@ -198,7 +198,7 @@ export default function ContactPage() {
                           placeholder="e.g. Ramesh Reddy"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                         />
                       </div>
                       <div>
@@ -211,7 +211,7 @@ export default function ContactPage() {
                           placeholder="+91 98484 80868"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                         />
                       </div>
                     </div>
@@ -226,7 +226,7 @@ export default function ContactPage() {
                           placeholder="name@gmail.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                         />
                       </div>
                       <div>
@@ -239,7 +239,7 @@ export default function ContactPage() {
                           placeholder="e.g. Karimnagar, Warangal, Hyderabad"
                           value={formData.city}
                           onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                         />
                       </div>
                     </div>
@@ -252,7 +252,7 @@ export default function ContactPage() {
                         <select
                           value={formData.serviceType}
                           onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
-                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                         >
                           <option>New Elevator Installation</option>
                           <option>Modernization of Old Lift</option>
@@ -268,7 +268,7 @@ export default function ContactPage() {
                         <select
                           value={formData.buildingType}
                           onChange={(e) => setFormData({ ...formData, buildingType: e.target.value })}
-                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                         >
                           <option>Residential Villa / Home</option>
                           <option>Apartment Complex</option>
@@ -284,7 +284,7 @@ export default function ContactPage() {
                         <select
                           value={formData.floors}
                           onChange={(e) => setFormData({ ...formData, floors: e.target.value })}
-                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                         >
                           <option>G+1 (2 Stops)</option>
                           <option>G+2 (3 Stops)</option>
@@ -304,14 +304,14 @@ export default function ContactPage() {
                         placeholder="Mention pit availability, shaft dimensions, glass capsule preference, etc."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-4 py-2 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                        className="w-full px-4 py-2 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                       />
                     </div>
 
                     <div className="pt-2">
                       <button
                         type="submit"
-                        className="w-full py-3.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md hover:shadow-lg transition-all"
+                        className="w-full py-3.5 bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md hover:shadow-lg transition-all"
                       >
                         Submit Quotation & Survey Request
                       </button>
@@ -333,7 +333,7 @@ export default function ContactPage() {
           <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-xs">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-50 px-3 py-1 rounded-full">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#423887] bg-purple-50 px-3 py-1 rounded-full">
                   Google Maps Location
                 </span>
                 <h3 className="text-xl font-bold text-slate-900 mt-2">

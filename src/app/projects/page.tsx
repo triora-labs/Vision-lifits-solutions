@@ -41,13 +41,13 @@ export default function ProjectsPage() {
             <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
               <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-red-600 font-bold">Projects Gallery</span>
+              <span className="text-[#423887] font-bold">Projects Gallery</span>
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-100 text-xs font-bold text-red-600 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-xs font-bold text-[#423887] uppercase tracking-wider">
               500+ Landmark Sites Across Telangana
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12]">
-              Completed installation <span className="text-red-600">sites gallery.</span>
+              Completed installation <span className="text-[#423887]">sites gallery.</span>
             </h1>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               Explore our landmark installations across Karimnagar, Hyderabad, Warangal, and throughout Telangana—spanning luxury villas, corporate towers, hospitals, and heavy industrial facilities.
@@ -67,7 +67,7 @@ export default function ProjectsPage() {
                   onClick={() => setFilter(cat)}
                   className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
                     filter === cat
-                      ? "bg-red-600 text-white shadow-xs"
+                      ? "bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] text-white shadow-xs"
                       : "bg-white text-slate-700 hover:bg-slate-200 border border-slate-200"
                   }`}
                 >
@@ -106,18 +106,18 @@ export default function ProjectsPage() {
                   <div className="absolute top-3 left-3 bg-white/95 text-slate-900 px-3 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-xs">
                     {project.category}
                   </div>
-                  <div className="absolute top-3 right-3 bg-red-600 text-white px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase">
+                  <div className="absolute top-3 right-3 bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] text-white px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase">
                     {project.completedYear}
                   </div>
                 </div>
 
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="text-xs text-red-600 font-semibold mb-1 flex items-center gap-1">
+                    <div className="text-xs text-[#423887] font-semibold mb-1 flex items-center gap-1">
                       <span>📍</span>
                       <span>{project.location}</span>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#423887] transition-colors">
                       {project.title}
                     </h3>
                     
@@ -142,7 +142,7 @@ export default function ProjectsPage() {
                   <button
                     type="button"
                     onClick={() => setSurveyOpen(true)}
-                    className="w-full py-2.5 text-center bg-slate-50 hover:bg-red-50 text-slate-800 hover:text-red-600 border border-slate-200 rounded-full text-xs font-bold uppercase tracking-wider transition-all"
+                    className="w-full py-2.5 text-center bg-slate-50 hover:bg-purple-50 text-slate-800 hover:text-[#423887] border border-slate-200 rounded-full text-xs font-bold uppercase tracking-wider transition-all"
                   >
                     Request Similar Installation
                   </button>
@@ -175,7 +175,7 @@ export default function ProjectsPage() {
                 className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between hover:border-red-200 transition-colors"
               >
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-red-600 mb-1">
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#423887] mb-1">
                     {client.segment}
                   </div>
                   <h4 className="text-base font-bold text-slate-900">{client.name}</h4>

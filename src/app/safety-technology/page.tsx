@@ -79,17 +79,17 @@ export default function SafetyTechnologyPage() {
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
                 <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
                 <span>/</span>
-                <span className="text-red-600 font-bold">Safety & Engineering</span>
+                <span className="text-[#423887] font-bold">Safety & Engineering</span>
               </div>
 
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-100 text-xs font-bold text-red-600 uppercase tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50 border border-purple-100 text-xs font-bold text-[#423887] uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] animate-pulse" />
                 IS 14665 & NBC 2016 Compliant Systems
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12]">
                 Safety systems <br />
-                built for <span className="text-red-600">peace of mind.</span>
+                built for <span className="text-[#423887]">peace of mind.</span>
               </h1>
 
               <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
@@ -106,9 +106,9 @@ export default function SafetyTechnologyPage() {
                   <div className="text-2xl font-black text-emerald-700">100%</div>
                   <div className="text-xs text-emerald-700 font-medium">Anti-Trap ARD</div>
                 </div>
-                <div className="p-3 rounded-2xl bg-red-50 border border-red-100">
-                  <div className="text-2xl font-black text-red-600">&lt; 30 ms</div>
-                  <div className="text-xs text-red-600 font-medium">Sensor Reaction</div>
+                <div className="p-3 rounded-2xl bg-purple-50 border border-purple-100">
+                  <div className="text-2xl font-black text-[#423887]">&lt; 30 ms</div>
+                  <div className="text-xs text-[#423887] font-medium">Sensor Reaction</div>
                 </div>
               </div>
 
@@ -117,7 +117,7 @@ export default function SafetyTechnologyPage() {
                 <button
                   type="button"
                   onClick={() => setSurveyOpen(true)}
-                  className="px-7 py-3.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md hover:shadow-lg transition-all"
+                  className="px-7 py-3.5 bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md hover:shadow-lg transition-all"
                 >
                   Request On-Site Safety Inspection
                 </button>
@@ -166,7 +166,7 @@ export default function SafetyTechnologyPage() {
       <section className="py-16 bg-slate-50 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-10">
-            <span className="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-100/70 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#423887] bg-red-100/70 px-3 py-1 rounded-full">
               Power Loss Protection
             </span>
             <h2 className="text-3xl font-extrabold text-slate-900 mt-2 tracking-tight">
@@ -185,13 +185,13 @@ export default function SafetyTechnologyPage() {
                 onClick={() => setActiveStep(idx)}
                 className={`p-6 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
                   activeStep === idx
-                    ? "bg-white border-red-600 shadow-md ring-1 ring-red-500/20"
+                    ? "bg-white border-[#863078] shadow-md ring-1 ring-[#863078]/40/20"
                     : "bg-white border-slate-200 hover:border-slate-300"
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className={`text-xs font-black px-2.5 py-0.5 rounded-full ${activeStep === idx ? "bg-red-600 text-white" : "bg-slate-100 text-slate-700"}`}>
+                    <span className={`text-xs font-black px-2.5 py-0.5 rounded-full ${activeStep === idx ? "bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] text-white" : "bg-slate-100 text-slate-700"}`}>
                       STEP {item.step}
                     </span>
                     <span className="text-[11px] font-semibold text-slate-400">
@@ -246,7 +246,7 @@ export default function SafetyTechnologyPage() {
                       {item.badge}
                     </span>
                   </div>
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-red-600 mb-1">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-[#423887] mb-1">
                     {item.tag}
                   </div>
                   <h3 className="text-base font-bold text-slate-900 mb-2">
@@ -280,7 +280,7 @@ export default function SafetyTechnologyPage() {
                 <button
                   type="button"
                   onClick={() => setSurveyOpen(true)}
-                  className="px-7 py-3.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow transition-all"
+                  className="px-7 py-3.5 bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow transition-all"
                 >
                   Schedule Statutory Inspection
                 </button>
@@ -290,7 +290,7 @@ export default function SafetyTechnologyPage() {
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {complianceStandards.map((std, i) => (
                 <div key={i} className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs">
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-red-600 mb-1">
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#423887] mb-1">
                     {std.category}
                   </div>
                   <h4 className="text-base font-bold text-slate-900">{std.code}</h4>

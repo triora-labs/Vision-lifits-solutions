@@ -161,13 +161,13 @@ export default function Navbar() {
                 href="/"
                 className={`relative px-2.5 py-2 text-[14px] font-medium transition-colors whitespace-nowrap ${
                   isActive("/")
-                    ? "text-[#ff334b] font-bold"
-                    : "text-slate-600 hover:text-[#ff334b]"
+                    ? "text-[#423887] font-bold"
+                    : "text-slate-600 hover:text-[#423887]"
                 }`}
               >
                 <span>Home</span>
                 {isActive("/") && (
-                  <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-[#ff334b] rounded-full" />
+                  <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] rounded-full" />
                 )}
               </Link>
 
@@ -176,13 +176,13 @@ export default function Navbar() {
                 href="/about"
                 className={`relative px-2.5 py-2 text-[14px] font-medium transition-colors whitespace-nowrap ${
                   isActive("/about")
-                    ? "text-[#ff334b] font-bold"
-                    : "text-slate-600 hover:text-[#ff334b]"
+                    ? "text-[#423887] font-bold"
+                    : "text-slate-600 hover:text-[#423887]"
                 }`}
               >
                 <span>About Us</span>
                 {isActive("/about") && (
-                  <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-[#ff334b] rounded-full" />
+                  <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] rounded-full" />
                 )}
               </Link>
 
@@ -196,14 +196,14 @@ export default function Navbar() {
                   href="/solutions"
                   className={`relative px-2.5 py-2 text-[14px] font-medium transition-colors whitespace-nowrap flex items-center gap-1 ${
                     isActive("/solutions")
-                      ? "text-[#ff334b] font-bold"
-                      : "text-slate-600 hover:text-[#ff334b]"
+                      ? "text-[#423887] font-bold"
+                      : "text-slate-600 hover:text-[#423887]"
                   }`}
                 >
                   <span>Solutions</span>
                   <svg
                     className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${
-                      activeDropdown === "solutions" ? "rotate-180 text-[#ff334b]" : ""
+                      activeDropdown === "solutions" ? "rotate-180 text-[#423887]" : ""
                     }`}
                     fill="none"
                     stroke="currentColor"
@@ -212,7 +212,7 @@ export default function Navbar() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                   </svg>
                   {isActive("/solutions") && (
-                    <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-[#ff334b] rounded-full" />
+                    <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] rounded-full" />
                   )}
                 </Link>
 
@@ -228,13 +228,13 @@ export default function Navbar() {
                       <Link
                         key={item.title}
                         href={item.href}
-                        className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-rose-50/50 transition-colors group"
+                        className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-purple-50/50 transition-colors group"
                       >
-                        <span className="text-lg p-1.5 rounded-lg bg-slate-50 group-hover:bg-rose-100/60 text-slate-700 transition-colors">
+                        <span className="text-lg p-1.5 rounded-lg bg-slate-50 group-hover:bg-purple-100/60 text-slate-700 transition-colors">
                           {item.icon}
                         </span>
                         <div>
-                          <div className="text-xs font-bold text-slate-800 group-hover:text-[#ff334b] transition-colors">
+                          <div className="text-xs font-bold text-slate-800 group-hover:text-[#423887] transition-colors">
                             {item.title}
                           </div>
                           <div className="text-[11px] text-slate-500 line-clamp-1">
@@ -246,7 +246,7 @@ export default function Navbar() {
                     <div className="pt-2 mt-1 border-t border-slate-100">
                       <Link
                         href="/solutions"
-                        className="block text-center text-xs font-bold text-[#ff334b] hover:text-[#ff1f38] py-1"
+                        className="block text-center text-xs font-bold text-[#423887] hover:text-[#ff1f38] py-1"
                       >
                         View All Engineering Solutions →
                       </Link>
@@ -265,14 +265,14 @@ export default function Navbar() {
                   href="/products"
                   className={`relative px-2.5 py-2 text-[14px] font-medium transition-colors whitespace-nowrap flex items-center gap-1 ${
                     isActive("/products")
-                      ? "text-[#ff334b] font-bold"
-                      : "text-slate-600 hover:text-[#ff334b]"
+                      ? "text-[#423887] font-bold"
+                      : "text-slate-600 hover:text-[#423887]"
                   }`}
                 >
                   <span>Products</span>
                   <svg
                     className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${
-                      activeDropdown === "products" ? "rotate-180 text-[#ff334b]" : ""
+                      activeDropdown === "products" ? "rotate-180 text-[#423887]" : ""
                     }`}
                     fill="none"
                     stroke="currentColor"
@@ -281,7 +281,7 @@ export default function Navbar() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                   </svg>
                   {isActive("/products") && (
-                    <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-[#ff334b] rounded-full" />
+                    <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] rounded-full" />
                   )}
                 </Link>
 
@@ -297,18 +297,18 @@ export default function Navbar() {
                       <Link
                         key={item.title}
                         href={item.href}
-                        className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-rose-50/50 transition-colors group"
+                        className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-purple-50/50 transition-colors group"
                       >
-                        <span className="text-lg p-1.5 rounded-lg bg-slate-50 group-hover:bg-rose-100/60 text-slate-700 transition-colors">
+                        <span className="text-lg p-1.5 rounded-lg bg-slate-50 group-hover:bg-purple-100/60 text-slate-700 transition-colors">
                           {item.icon}
                         </span>
                         <div className="flex-1">
                           <div className="flex items-center justify-between">
-                            <span className="text-xs font-bold text-slate-800 group-hover:text-[#ff334b] transition-colors">
+                            <span className="text-xs font-bold text-slate-800 group-hover:text-[#423887] transition-colors">
                               {item.title}
                             </span>
                             {item.badge && (
-                              <span className="text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-rose-50 text-[#ff334b] border border-rose-100">
+                              <span className="text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-purple-50 text-[#423887] border border-purple-100">
                                 {item.badge}
                               </span>
                             )}
@@ -322,7 +322,7 @@ export default function Navbar() {
                     <div className="pt-2 mt-1 border-t border-slate-100">
                       <Link
                         href="/products"
-                        className="block text-center text-xs font-bold text-[#ff334b] hover:text-[#ff1f38] py-1"
+                        className="block text-center text-xs font-bold text-[#423887] hover:text-[#ff1f38] py-1"
                       >
                         Explore Complete Technical Catalog →
                       </Link>
@@ -336,13 +336,13 @@ export default function Navbar() {
                 href="/services"
                 className={`relative px-2.5 py-2 text-[14px] font-medium transition-colors whitespace-nowrap ${
                   isActive("/services")
-                    ? "text-[#ff334b] font-bold"
-                    : "text-slate-600 hover:text-[#ff334b]"
+                    ? "text-[#423887] font-bold"
+                    : "text-slate-600 hover:text-[#423887]"
                 }`}
               >
                 <span>Services</span>
                 {isActive("/services") && (
-                  <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-[#ff334b] rounded-full" />
+                  <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] rounded-full" />
                 )}
               </Link>
 
@@ -351,13 +351,13 @@ export default function Navbar() {
                 href="/safety-technology"
                 className={`relative px-2.5 py-2 text-[14px] font-medium transition-colors whitespace-nowrap ${
                   isActive("/safety-technology")
-                    ? "text-[#ff334b] font-bold"
-                    : "text-slate-600 hover:text-[#ff334b]"
+                    ? "text-[#423887] font-bold"
+                    : "text-slate-600 hover:text-[#423887]"
                 }`}
               >
                 <span>Safety & Tech</span>
                 {isActive("/safety-technology") && (
-                  <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-[#ff334b] rounded-full" />
+                  <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] rounded-full" />
                 )}
               </Link>
 
@@ -366,16 +366,16 @@ export default function Navbar() {
                 href="/production-hub"
                 className={`relative px-2.5 py-2 text-[14px] font-medium transition-colors whitespace-nowrap flex items-center gap-1.5 ${
                   isActive("/production-hub")
-                    ? "text-[#ff334b] font-bold"
-                    : "text-slate-600 hover:text-[#ff334b]"
+                    ? "text-[#423887] font-bold"
+                    : "text-slate-600 hover:text-[#423887]"
                 }`}
               >
                 <span>Production Hub</span>
-                <span className="text-[9px] font-black uppercase tracking-wider px-1.5 py-0.2 rounded-full bg-rose-50 text-[#ff334b] border border-rose-100">
+                <span className="text-[9px] font-black uppercase tracking-wider px-1.5 py-0.2 rounded-full bg-purple-50 text-[#423887] border border-purple-100">
                   B2B
                 </span>
                 {isActive("/production-hub") && (
-                  <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-[#ff334b] rounded-full" />
+                  <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] rounded-full" />
                 )}
               </Link>
 
@@ -384,13 +384,13 @@ export default function Navbar() {
                 href="/projects"
                 className={`relative px-2.5 py-2 text-[14px] font-medium transition-colors whitespace-nowrap ${
                   isActive("/projects")
-                    ? "text-[#ff334b] font-bold"
-                    : "text-slate-600 hover:text-[#ff334b]"
+                    ? "text-[#423887] font-bold"
+                    : "text-slate-600 hover:text-[#423887]"
                 }`}
               >
                 <span>Projects</span>
                 {isActive("/projects") && (
-                  <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-[#ff334b] rounded-full" />
+                  <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] rounded-full" />
                 )}
               </Link>
 
@@ -399,13 +399,13 @@ export default function Navbar() {
                 href="/contact"
                 className={`relative px-2.5 py-2 text-[14px] font-medium transition-colors whitespace-nowrap ${
                   isActive("/contact")
-                    ? "text-[#ff334b] font-bold"
-                    : "text-slate-600 hover:text-[#ff334b]"
+                    ? "text-[#423887] font-bold"
+                    : "text-slate-600 hover:text-[#423887]"
                 }`}
               >
                 <span>Contact Us</span>
                 {isActive("/contact") && (
-                  <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-[#ff334b] rounded-full" />
+                  <span className="absolute -bottom-4.5 left-2 right-2 h-[2.5px] bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] rounded-full" />
                 )}
               </Link>
             </nav>
@@ -414,10 +414,10 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-3">
               <a
                 href={`tel:${COMPANY_INFO.phoneRaw}`}
-                className="hidden 2xl:flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold text-slate-700 hover:text-[#ff334b] hover:bg-rose-50/50 transition-colors whitespace-nowrap"
+                className="hidden 2xl:flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold text-slate-700 hover:text-[#423887] hover:bg-purple-50/50 transition-colors whitespace-nowrap"
                 title="Call Vision Lifts Directly"
               >
-                <span className="w-7 h-7 rounded-full bg-rose-50 text-[#ff334b] flex items-center justify-center text-xs">
+                <span className="w-7 h-7 rounded-full bg-purple-50 text-[#423887] flex items-center justify-center text-xs">
                   📞
                 </span>
                 <span>{COMPANY_INFO.phone}</span>
@@ -426,7 +426,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setSurveyModalOpen(true)}
-                className="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-[#ff334b] to-[#ff4767] hover:from-[#ff1f38] hover:to-[#f43f5e] text-white shadow-sm shadow-red-500/20 hover:shadow-md transition-all whitespace-nowrap cursor-pointer"
+                className="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] hover:opacity-95 text-white shadow-sm shadow-[#863078]/25 hover:shadow-md transition-all whitespace-nowrap cursor-pointer"
               >
                 Book Free Survey
               </button>
@@ -437,7 +437,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setSurveyModalOpen(true)}
-                className="px-3.5 py-1.5 text-xs font-bold bg-gradient-to-r from-[#ff334b] to-[#ff4767] text-white rounded-full uppercase tracking-wider shadow-xs cursor-pointer active:scale-95 transition-all"
+                className="px-3.5 py-1.5 text-xs font-bold bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] text-white rounded-full uppercase tracking-wider shadow-xs cursor-pointer active:scale-95 transition-all"
               >
                 Survey
               </button>
@@ -492,14 +492,14 @@ export default function Navbar() {
               </div>
 
               {/* Direct Support Hotline Strip */}
-              <div className="px-5 py-2.5 bg-rose-50/70 border-b border-rose-100/70 flex items-center justify-between text-xs">
+              <div className="px-5 py-2.5 bg-purple-50/70 border-b border-purple-100/70 flex items-center justify-between text-xs">
                 <div className="flex items-center gap-1.5 font-medium text-slate-700">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span>Karimnagar & Telangana HQ</span>
                 </div>
                 <a
                   href={`tel:${COMPANY_INFO.phoneRaw}`}
-                  className="font-bold text-[#ff334b] hover:underline flex items-center gap-1"
+                  className="font-bold text-[#423887] hover:underline flex items-center gap-1"
                 >
                   📞 {COMPANY_INFO.phone}
                 </a>
@@ -513,7 +513,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
                     isActive("/")
-                      ? "bg-rose-50 text-[#ff334b] font-bold"
+                      ? "bg-purple-50 text-[#423887] font-bold"
                       : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
@@ -521,7 +521,7 @@ export default function Navbar() {
                     <span className="text-base">🏠</span>
                     <span>Home</span>
                   </span>
-                  {isActive("/") && <span className="w-2 h-2 rounded-full bg-[#ff334b]" />}
+                  {isActive("/") && <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887]" />}
                 </Link>
 
                 {/* About Us */}
@@ -530,7 +530,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
                     isActive("/about")
-                      ? "bg-rose-50 text-[#ff334b] font-bold"
+                      ? "bg-purple-50 text-[#423887] font-bold"
                       : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
@@ -538,7 +538,7 @@ export default function Navbar() {
                     <span className="text-base">🏢</span>
                     <span>About Us</span>
                   </span>
-                  {isActive("/about") && <span className="w-2 h-2 rounded-full bg-[#ff334b]" />}
+                  {isActive("/about") && <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887]" />}
                 </Link>
 
                 {/* Solutions Accordion */}
@@ -547,7 +547,7 @@ export default function Navbar() {
                     <Link
                       href="/solutions"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center gap-3 hover:text-[#ff334b] flex-1 font-bold"
+                      className="flex items-center gap-3 hover:text-[#423887] flex-1 font-bold"
                     >
                       <span className="text-base">🛗</span>
                       <span>Solutions</span>
@@ -562,7 +562,7 @@ export default function Navbar() {
                     >
                       <svg
                         className={`w-4 h-4 transition-transform duration-200 ${
-                          activeDropdown === "mobile-solutions" ? "rotate-180 text-[#ff334b]" : ""
+                          activeDropdown === "mobile-solutions" ? "rotate-180 text-[#423887]" : ""
                         }`}
                         fill="none"
                         stroke="currentColor"
@@ -580,7 +580,7 @@ export default function Navbar() {
                           key={s.title}
                           href={s.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium text-slate-700 hover:text-[#ff334b] hover:bg-white transition-colors"
+                          className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium text-slate-700 hover:text-[#423887] hover:bg-white transition-colors"
                         >
                           <span>{s.icon}</span>
                           <span>{s.title}</span>
@@ -596,7 +596,7 @@ export default function Navbar() {
                     <Link
                       href="/products"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center gap-3 hover:text-[#ff334b] flex-1 font-bold"
+                      className="flex items-center gap-3 hover:text-[#423887] flex-1 font-bold"
                     >
                       <span className="text-base">📦</span>
                       <span>Products</span>
@@ -611,7 +611,7 @@ export default function Navbar() {
                     >
                       <svg
                         className={`w-4 h-4 transition-transform duration-200 ${
-                          activeDropdown === "mobile-products" ? "rotate-180 text-[#ff334b]" : ""
+                          activeDropdown === "mobile-products" ? "rotate-180 text-[#423887]" : ""
                         }`}
                         fill="none"
                         stroke="currentColor"
@@ -629,14 +629,14 @@ export default function Navbar() {
                           key={p.title}
                           href={p.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium text-slate-700 hover:text-[#ff334b] hover:bg-white transition-colors"
+                          className="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium text-slate-700 hover:text-[#423887] hover:bg-white transition-colors"
                         >
                           <span className="flex items-center gap-2.5">
                             <span>{p.icon}</span>
                             <span>{p.title}</span>
                           </span>
                           {p.badge && (
-                            <span className="text-[9px] font-black uppercase px-1.5 py-0.2 rounded-full bg-rose-50 text-[#ff334b] border border-rose-100">
+                            <span className="text-[9px] font-black uppercase px-1.5 py-0.2 rounded-full bg-purple-50 text-[#423887] border border-purple-100">
                               {p.badge}
                             </span>
                           )}
@@ -652,7 +652,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
                     isActive("/services")
-                      ? "bg-rose-50 text-[#ff334b] font-bold"
+                      ? "bg-purple-50 text-[#423887] font-bold"
                       : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
@@ -660,7 +660,7 @@ export default function Navbar() {
                     <span className="text-base">🛠️</span>
                     <span>Services & AMC</span>
                   </span>
-                  {isActive("/services") && <span className="w-2 h-2 rounded-full bg-[#ff334b]" />}
+                  {isActive("/services") && <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887]" />}
                 </Link>
 
                 {/* Safety & Tech */}
@@ -669,7 +669,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
                     isActive("/safety-technology")
-                      ? "bg-rose-50 text-[#ff334b] font-bold"
+                      ? "bg-purple-50 text-[#423887] font-bold"
                       : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
@@ -677,7 +677,7 @@ export default function Navbar() {
                     <span className="text-base">🛡️</span>
                     <span>Safety & Technology</span>
                   </span>
-                  {isActive("/safety-technology") && <span className="w-2 h-2 rounded-full bg-[#ff334b]" />}
+                  {isActive("/safety-technology") && <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887]" />}
                 </Link>
 
                 {/* Production Hub */}
@@ -686,7 +686,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
                     isActive("/production-hub")
-                      ? "bg-rose-50 text-[#ff334b] font-bold"
+                      ? "bg-purple-50 text-[#423887] font-bold"
                       : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
@@ -694,7 +694,7 @@ export default function Navbar() {
                     <span className="text-base">🏭</span>
                     <span>Production Hub</span>
                   </span>
-                  <span className="text-[9px] font-black uppercase px-2 py-0.5 rounded-full bg-rose-50 text-[#ff334b] border border-rose-100">
+                  <span className="text-[9px] font-black uppercase px-2 py-0.5 rounded-full bg-purple-50 text-[#423887] border border-purple-100">
                     B2B
                   </span>
                 </Link>
@@ -705,7 +705,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
                     isActive("/projects")
-                      ? "bg-rose-50 text-[#ff334b] font-bold"
+                      ? "bg-purple-50 text-[#423887] font-bold"
                       : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
@@ -713,7 +713,7 @@ export default function Navbar() {
                     <span className="text-base">📸</span>
                     <span>Projects Gallery</span>
                   </span>
-                  {isActive("/projects") && <span className="w-2 h-2 rounded-full bg-[#ff334b]" />}
+                  {isActive("/projects") && <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887]" />}
                 </Link>
 
                 {/* Contact Us */}
@@ -722,7 +722,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
                     isActive("/contact")
-                      ? "bg-rose-50 text-[#ff334b] font-bold"
+                      ? "bg-purple-50 text-[#423887] font-bold"
                       : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
@@ -730,7 +730,7 @@ export default function Navbar() {
                     <span className="text-base">📍</span>
                     <span>Contact Us</span>
                   </span>
-                  {isActive("/contact") && <span className="w-2 h-2 rounded-full bg-[#ff334b]" />}
+                  {isActive("/contact") && <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887]" />}
                 </Link>
               </div>
             </div>
@@ -743,7 +743,7 @@ export default function Navbar() {
                   setMobileMenuOpen(false);
                   setSurveyModalOpen(true);
                 }}
-                className="w-full py-3.5 bg-gradient-to-r from-[#ff334b] to-[#ff4767] hover:from-[#ff1f38] hover:to-[#f43f5e] text-white font-bold rounded-full text-xs uppercase tracking-wider text-center shadow-md shadow-red-500/25 transition-all cursor-pointer active:scale-98"
+                className="w-full py-3.5 bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] hover:opacity-95 text-white font-bold rounded-full text-xs uppercase tracking-wider text-center shadow-md shadow-[#863078]/25 transition-all cursor-pointer active:scale-98"
               >
                 Book Free Site Survey
               </button>

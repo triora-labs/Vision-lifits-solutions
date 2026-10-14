@@ -48,13 +48,13 @@ export default function ProductionHubPage() {
             <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
               <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-red-600 font-bold">Production Hub</span>
+              <span className="text-[#423887] font-bold">Production Hub</span>
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-50 border border-red-100 rounded-full text-xs font-bold text-red-600 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-purple-50 border border-purple-100 rounded-full text-xs font-bold text-[#423887] uppercase tracking-wider">
               B2B Manufacturing & OEM Component Supply
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12]">
-              Production hub & <span className="text-red-600">raw materials catalog.</span>
+              Production hub & <span className="text-[#423887]">raw materials catalog.</span>
             </h1>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               We supply certified elevator machines, VVVF integrated controllers, automatic door operators, guide rails, and custom laser-cut SS 304 cabins to elevator companies, contractors, and OEMs across South India.
@@ -68,19 +68,19 @@ export default function ProductionHubPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             <div className="p-4 bg-white rounded-2xl border border-slate-200 shadow-xs">
-              <div className="text-2xl font-black text-red-600">Direct Factory</div>
+              <div className="text-2xl font-black text-[#423887]">Direct Factory</div>
               <div className="text-xs text-slate-500 font-medium mt-1">Wholesale Pricing in Karimnagar</div>
             </div>
             <div className="p-4 bg-white rounded-2xl border border-slate-200 shadow-xs">
-              <div className="text-2xl font-black text-red-600">IS 14665</div>
+              <div className="text-2xl font-black text-[#423887]">IS 14665</div>
               <div className="text-xs text-slate-500 font-medium mt-1">Certified Batch Quality Testing</div>
             </div>
             <div className="p-4 bg-white rounded-2xl border border-slate-200 shadow-xs">
-              <div className="text-2xl font-black text-red-600">Ready Stock</div>
+              <div className="text-2xl font-black text-[#423887]">Ready Stock</div>
               <div className="text-xs text-slate-500 font-medium mt-1">Machines, Rails & Panels On Demand</div>
             </div>
             <div className="p-4 bg-white rounded-2xl border border-slate-200 shadow-xs">
-              <div className="text-2xl font-black text-red-600">Engineering</div>
+              <div className="text-2xl font-black text-[#423887]">Engineering</div>
               <div className="text-xs text-slate-500 font-medium mt-1">Free Wiring & Parameter Support</div>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function ProductionHubPage() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap ${
                   selectedCategory === cat
-                    ? "bg-red-600 text-white shadow-xs"
+                    ? "bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] text-white shadow-xs"
                     : "bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200"
                 }`}
               >
@@ -124,7 +124,7 @@ export default function ProductionHubPage() {
                   <h3 className="text-2xl font-extrabold text-slate-900">
                     {comp.name}
                   </h3>
-                  <p className="text-xs font-semibold text-red-600">
+                  <p className="text-xs font-semibold text-[#423887]">
                     {comp.shortDesc}
                   </p>
                   <p className="text-slate-600 text-sm leading-relaxed">
@@ -224,7 +224,7 @@ export default function ProductionHubPage() {
                       placeholder="e.g. Telangana Elevator Services"
                       value={b2bEnquiry.companyName}
                       onChange={(e) => setB2bEnquiry({ ...b2bEnquiry, companyName: e.target.value })}
-                      className="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500"
+                      className="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                     />
                   </div>
                   <div>
@@ -237,7 +237,7 @@ export default function ProductionHubPage() {
                       placeholder="e.g. Ramesh"
                       value={b2bEnquiry.contactPerson}
                       onChange={(e) => setB2bEnquiry({ ...b2bEnquiry, contactPerson: e.target.value })}
-                      className="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500"
+                      className="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                     />
                   </div>
                 </div>
@@ -253,7 +253,7 @@ export default function ProductionHubPage() {
                       placeholder="+91 98484 80868"
                       value={b2bEnquiry.phone}
                       onChange={(e) => setB2bEnquiry({ ...b2bEnquiry, phone: e.target.value })}
-                      className="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500"
+                      className="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                     />
                   </div>
                   <div>
@@ -265,7 +265,7 @@ export default function ProductionHubPage() {
                       placeholder="dealer@company.com"
                       value={b2bEnquiry.email}
                       onChange={(e) => setB2bEnquiry({ ...b2bEnquiry, email: e.target.value })}
-                      className="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500"
+                      className="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                     />
                   </div>
                   <div>
@@ -278,7 +278,7 @@ export default function ProductionHubPage() {
                       placeholder="e.g. Karimnagar, Warangal"
                       value={b2bEnquiry.city}
                       onChange={(e) => setB2bEnquiry({ ...b2bEnquiry, city: e.target.value })}
-                      className="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500"
+                      className="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                     />
                   </div>
                 </div>
@@ -291,7 +291,7 @@ export default function ProductionHubPage() {
                     <select
                       value={b2bEnquiry.componentInterest}
                       onChange={(e) => setB2bEnquiry({ ...b2bEnquiry, componentInterest: e.target.value })}
-                      className="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-500"
+                      className="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                     >
                       <option>Traction Machines (PMSM Gearless)</option>
                       <option>Integrated VVVF Controller Cabinets</option>
@@ -309,7 +309,7 @@ export default function ProductionHubPage() {
                     <select
                       value={b2bEnquiry.quantity}
                       onChange={(e) => setB2bEnquiry({ ...b2bEnquiry, quantity: e.target.value })}
-                      className="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-500"
+                      className="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                     >
                       <option>1 - 5 Units / Month</option>
                       <option>5 - 15 Units / Month</option>
@@ -328,14 +328,14 @@ export default function ProductionHubPage() {
                     placeholder="e.g. 6-stop 1.0 m/s gearless controller with ARD board..."
                     value={b2bEnquiry.notes}
                     onChange={(e) => setB2bEnquiry({ ...b2bEnquiry, notes: e.target.value })}
-                    className="w-full px-4 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500"
+                    className="w-full px-4 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                   />
                 </div>
 
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-3.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md hover:shadow-lg transition-all"
+                    className="w-full py-3.5 bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md hover:shadow-lg transition-all"
                   >
                     Request Wholesale B2B Price Quotation
                   </button>

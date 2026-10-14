@@ -33,13 +33,13 @@ export default function AboutPage() {
             <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
               <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-red-600 font-bold">About Us</span>
+              <span className="text-[#423887] font-bold">About Us</span>
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-100 text-xs font-bold text-red-600 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-xs font-bold text-[#423887] uppercase tracking-wider">
               Karimnagar Headquarters & Service Hub
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12]">
-              Pioneering elevator engineering in <span className="text-red-600">Telangana.</span>
+              Pioneering elevator engineering in <span className="text-[#423887]">Telangana.</span>
             </h1>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               Founded by <strong>Ramesh Vilasagar</strong>, Vision Lifts & Solutions blends rigorous mechanical engineering with local service responsiveness, bringing safer, quieter, and smarter vertical mobility to homes, offices, and healthcare facilities.
@@ -67,7 +67,7 @@ export default function AboutPage() {
               </p>
 
               {/* Founder quote box */}
-              <div className="p-6 rounded-2xl bg-slate-50 border-l-4 border-red-600 shadow-xs">
+              <div className="p-6 rounded-2xl bg-slate-50 border-l-4 border-[#863078] shadow-xs">
                 <p className="italic text-slate-700 text-sm">
                   &ldquo;Every lift we commission carries our personal reputation. We treat every passenger cab as if our own family travels in it every day.&rdquo;
                 </p>
@@ -104,7 +104,7 @@ export default function AboutPage() {
       <section className="py-16 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-100/70 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#423887] bg-red-100/70 px-3 py-1 rounded-full">
               Regional Strength
             </span>
             <h2 className="text-3xl font-extrabold text-slate-900 mt-2 tracking-tight">
@@ -119,15 +119,15 @@ export default function AboutPage() {
             {regionalHubs.map((hub, i) => (
               <div key={i} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center font-bold mb-4">
+                  <div className="w-10 h-10 rounded-full bg-purple-50 text-[#423887] flex items-center justify-center font-bold mb-4">
                     📍
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 mb-1">{hub.city}</h3>
-                  <div className="text-xs text-red-600 font-semibold mb-3">{hub.address}</div>
+                  <div className="text-xs text-[#423887] font-semibold mb-3">{hub.address}</div>
                   <p className="text-xs text-slate-600 leading-relaxed mb-4">{hub.role}</p>
                 </div>
                 <div className="pt-3 border-t border-slate-100 text-xs font-bold text-slate-800">
-                  Direct Line: <a href={`tel:${COMPANY_INFO.phoneRaw}`} className="text-red-600 hover:underline">{hub.contact}</a>
+                  Direct Line: <a href={`tel:${COMPANY_INFO.phoneRaw}`} className="text-[#423887] hover:underline">{hub.contact}</a>
                 </div>
               </div>
             ))}
@@ -189,7 +189,7 @@ export default function AboutPage() {
                 <button
                   type="button"
                   onClick={() => setSurveyOpen(true)}
-                  className="px-7 py-3.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow transition-all"
+                  className="px-7 py-3.5 bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow transition-all"
                 >
                   Consult Our Technical Team
                 </button>
@@ -221,7 +221,7 @@ export default function AboutPage() {
             {milestones.map((m, i) => (
               <div key={i} className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
                 <div>
-                  <div className="text-xl font-black text-red-600 mb-1">{m.year}</div>
+                  <div className="text-xl font-black text-[#423887] mb-1">{m.year}</div>
                   <h3 className="text-sm font-bold text-slate-900 mb-2">{m.title}</h3>
                   <p className="text-xs text-slate-500 leading-relaxed">{m.desc}</p>
                 </div>

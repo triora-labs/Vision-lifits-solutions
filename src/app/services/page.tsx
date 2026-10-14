@@ -104,13 +104,13 @@ export default function ServicesPage() {
             <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
               <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-red-600 font-bold">Services & AMC</span>
+              <span className="text-[#423887] font-bold">Services & AMC</span>
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-100 text-xs font-bold text-red-600 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-xs font-bold text-[#423887] uppercase tracking-wider">
               Lifecycle Engineering Support
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12]">
-              Elevator services & <span className="text-red-600">AMC maintenance.</span>
+              Elevator services & <span className="text-[#423887]">AMC maintenance.</span>
             </h1>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               From initial architectural shaft planning to certified installation, complete modernization, and 24/7 round-the-clock emergency breakdown response across Telangana.
@@ -135,7 +135,7 @@ export default function ServicesPage() {
                   <h3 className="text-xl font-bold text-slate-900 mb-1">
                     {srv.title}
                   </h3>
-                  <div className="text-xs text-red-600 font-semibold mb-3">
+                  <div className="text-xs text-[#423887] font-semibold mb-3">
                     {srv.subtitle}
                   </div>
                   <p className="text-slate-600 text-sm leading-relaxed mb-6">
@@ -161,7 +161,7 @@ export default function ServicesPage() {
                   <button
                     type="button"
                     onClick={() => setSurveyOpen(true)}
-                    className="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full transition-all shadow-sm"
+                    className="w-full py-3 bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider rounded-full transition-all shadow-sm"
                   >
                     Enquire for {srv.title}
                   </button>
@@ -194,7 +194,7 @@ export default function ServicesPage() {
                 className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between"
               >
                 <div>
-                  <div className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 bg-red-50 text-red-600 border border-red-100">
+                  <div className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 bg-purple-50 text-[#423887] border border-purple-100">
                     {plan.badge}
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
@@ -219,7 +219,7 @@ export default function ServicesPage() {
                   <button
                     type="button"
                     onClick={() => setSurveyOpen(true)}
-                    className="w-full py-3 rounded-full font-bold text-xs uppercase tracking-wider bg-red-600 hover:bg-red-700 text-white shadow-sm transition-all"
+                    className="w-full py-3 rounded-full font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] hover:opacity-95 text-white shadow-sm transition-all"
                   >
                     Get AMC Quote for Your Building
                   </button>
@@ -239,7 +239,7 @@ export default function ServicesPage() {
             </div>
             <a
               href={`tel:${COMPANY_INFO.phoneRaw}`}
-              className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow transition-all whitespace-nowrap"
+              className="px-6 py-3 bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow transition-all whitespace-nowrap"
             >
               Emergency Call: {COMPANY_INFO.phone}
             </a>

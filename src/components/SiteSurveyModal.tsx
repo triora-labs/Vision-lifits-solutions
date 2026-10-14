@@ -38,7 +38,7 @@ export default function SiteSurveyModal({ isOpen, onClose }: SiteSurveyModalProp
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Banner */}
-        <div className="bg-gradient-to-r from-[#ff334b] to-[#ff4767] text-white p-5 sm:p-6 relative shrink-0">
+        <div className="bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] text-white p-5 sm:p-6 relative shrink-0">
           <button
             type="button"
             onClick={resetAndClose}
@@ -97,7 +97,7 @@ export default function SiteSurveyModal({ isOpen, onClose }: SiteSurveyModalProp
                   placeholder="e.g. Ramesh Reddy"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                  className="w-full px-4 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                 />
               </div>
 
@@ -112,7 +112,7 @@ export default function SiteSurveyModal({ isOpen, onClose }: SiteSurveyModalProp
                     placeholder="+91 98484 80868"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                    className="w-full px-4 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                   />
                 </div>
                 <div>
@@ -125,7 +125,7 @@ export default function SiteSurveyModal({ isOpen, onClose }: SiteSurveyModalProp
                     placeholder="e.g. Karimnagar, Warangal"
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                    className="w-full px-4 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                    className="w-full px-4 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                   />
                 </div>
               </div>
@@ -138,7 +138,7 @@ export default function SiteSurveyModal({ isOpen, onClose }: SiteSurveyModalProp
                   <select
                     value={formData.buildingType}
                     onChange={(e) => setFormData({ ...formData, buildingType: e.target.value })}
-                    className="w-full px-4 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
+                    className="w-full px-4 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#863078]/40 bg-white"
                   >
                     <option>Residential Villa / Home</option>
                     <option>Apartment Building</option>
@@ -155,7 +155,7 @@ export default function SiteSurveyModal({ isOpen, onClose }: SiteSurveyModalProp
                   <select
                     value={formData.floors}
                     onChange={(e) => setFormData({ ...formData, floors: e.target.value })}
-                    className="w-full px-4 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
+                    className="w-full px-4 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#863078]/40 bg-white"
                   >
                     <option>G+1 (2 Stops)</option>
                     <option>G+2 (3 Stops)</option>
@@ -175,14 +175,14 @@ export default function SiteSurveyModal({ isOpen, onClose }: SiteSurveyModalProp
                   placeholder="e.g. Existing building with no pit, requires glass capsule, etc."
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  className="w-full px-4 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                  className="w-full px-4 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#863078]/40"
                 />
               </div>
 
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-gradient-to-r from-[#ff334b] to-[#ff4767] hover:from-[#ff1f38] hover:to-[#f43f5e] text-white font-bold rounded-full shadow-md shadow-red-500/25 transition-all text-xs uppercase tracking-wider cursor-pointer active:scale-98"
+                  className="w-full py-3.5 bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] hover:opacity-95 text-white font-bold rounded-full shadow-md shadow-[#863078]/25 transition-all text-xs uppercase tracking-wider cursor-pointer active:scale-98"
                 >
                   Confirm Free Site Survey Request
                 </button>

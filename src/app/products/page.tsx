@@ -28,13 +28,13 @@ export default function ProductsPage() {
             <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
               <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-red-600 font-bold">Products</span>
+              <span className="text-[#423887] font-bold">Products</span>
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-100 text-xs font-bold text-red-600 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-xs font-bold text-[#423887] uppercase tracking-wider">
               Complete Elevator Catalog & Technical Specs
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12]">
-              Engineered elevators & <span className="text-red-600">premium cabins.</span>
+              Engineered elevators & <span className="text-[#423887]">premium cabins.</span>
             </h1>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               Explore our full portfolio of residential, commercial, hospital, freight, and panoramic capsule elevators with full engineering specifications and designer cabin finishes.
@@ -77,8 +77,8 @@ export default function ProductsPage() {
                 </button>
               ))}
 
-              <div className="pt-4 p-5 rounded-2xl bg-red-50 border border-red-100 text-slate-800">
-                <div className="text-xs font-bold uppercase tracking-wider text-red-700 mb-1">
+              <div className="pt-4 p-5 rounded-2xl bg-purple-50 border border-purple-100 text-slate-800">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#423887] mb-1">
                   Need Custom Dimensions?
                 </div>
                 <p className="text-xs text-slate-600 mb-3">
@@ -87,7 +87,7 @@ export default function ProductsPage() {
                 <button
                   type="button"
                   onClick={() => setSurveyOpen(true)}
-                  className="w-full py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full transition-all"
+                  className="w-full py-2.5 bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider rounded-full transition-all"
                 >
                   Request Custom Sizing
                 </button>
@@ -98,7 +98,7 @@ export default function ProductsPage() {
             <div className="lg:col-span-8">
               <div className="bg-slate-50/80 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm">
                 <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
-                  <span className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-bold uppercase tracking-wider">
+                  <span className="px-3 py-1 bg-red-100 text-[#423887] rounded-full text-xs font-bold uppercase tracking-wider">
                     {currentProd.category} Series
                   </span>
                   <span className="text-xs text-slate-500 font-semibold">
@@ -109,7 +109,7 @@ export default function ProductsPage() {
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-1">
                   {currentProd.name}
                 </h3>
-                <p className="text-xs sm:text-sm text-red-600 font-semibold mb-6">
+                <p className="text-xs sm:text-sm text-[#423887] font-semibold mb-6">
                   {currentProd.tagline}
                 </p>
 
@@ -177,7 +177,7 @@ export default function ProductsPage() {
                   <button
                     type="button"
                     onClick={() => setSurveyOpen(true)}
-                    className="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-all"
+                    className="px-6 py-2.5 bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-all"
                   >
                     Book Site Survey for {currentProd.name}
                   </button>
@@ -234,7 +234,7 @@ export default function ProductsPage() {
                       {cabin.desc}
                     </p>
                   </div>
-                  <div className="mt-4 pt-3 border-t border-slate-100 text-xs font-bold text-red-600">
+                  <div className="mt-4 pt-3 border-t border-slate-100 text-xs font-bold text-[#423887]">
                     Sample Available at Karimnagar HQ
                   </div>
                 </div>

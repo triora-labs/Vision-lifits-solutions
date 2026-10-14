@@ -67,13 +67,13 @@ export default function SolutionsPage() {
             <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
               <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-red-600 font-bold">Solutions</span>
+              <span className="text-[#423887] font-bold">Solutions</span>
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-100 text-xs font-bold text-red-600 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-xs font-bold text-[#423887] uppercase tracking-wider">
               Categorized Elevator Systems
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12]">
-              Elevator solutions for <span className="text-red-600">every building.</span>
+              Elevator solutions for <span className="text-[#423887]">every building.</span>
             </h1>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               From whisper-quiet pitless villa elevators running on single-phase household power to high-capacity hospital bed lifts and heavy industrial freight systems across Telangana.
@@ -93,7 +93,7 @@ export default function SolutionsPage() {
                   onClick={() => setActiveTab(tab)}
                   className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
                     activeTab.toLowerCase() === tab.toLowerCase()
-                      ? "bg-red-600 text-white shadow-xs"
+                      ? "bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] text-white shadow-xs"
                       : "bg-white text-slate-700 hover:bg-slate-200 border border-slate-200"
                   }`}
                 >
@@ -124,13 +124,13 @@ export default function SolutionsPage() {
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                 <div className={`lg:col-span-7 space-y-4 ${idx % 2 === 1 ? "lg:order-2" : ""}`}>
-                  <div className="inline-block px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-bold uppercase tracking-wider">
+                  <div className="inline-block px-3 py-1 bg-red-100 text-[#423887] rounded-full text-xs font-bold uppercase tracking-wider">
                     {solution.category} Elevator Solution
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                     {solution.title}
                   </h2>
-                  <p className="text-red-600 font-semibold text-xs sm:text-sm">
+                  <p className="text-[#423887] font-semibold text-xs sm:text-sm">
                     {solution.subtitle}
                   </p>
                   <p className="text-slate-600 leading-relaxed text-sm">
@@ -163,7 +163,7 @@ export default function SolutionsPage() {
                     <button
                       type="button"
                       onClick={() => setSurveyOpen(true)}
-                      className="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-all"
+                      className="px-6 py-2.5 bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-all"
                     >
                       Book Site Survey for {solution.category}
                     </button>
@@ -227,7 +227,7 @@ export default function SolutionsPage() {
                   <tr key={i} className="hover:bg-slate-50/80 transition-colors">
                     <td className="p-4 font-bold text-slate-900">
                       <div>{row.category}</div>
-                      <div className="text-[11px] text-red-600 font-semibold">{row.series}</div>
+                      <div className="text-[11px] text-[#423887] font-semibold">{row.series}</div>
                     </td>
                     <td className="p-4 text-slate-700 font-medium">{row.pit}</td>
                     <td className="p-4 text-slate-700">{row.overhead}</td>
@@ -238,7 +238,7 @@ export default function SolutionsPage() {
                       <button
                         type="button"
                         onClick={() => setSurveyOpen(true)}
-                        className="px-3.5 py-1.5 bg-red-600 text-white font-bold rounded-full text-[11px] uppercase tracking-wider hover:bg-red-700 transition-all"
+                        className="px-3.5 py-1.5 bg-gradient-to-r from-[#d3313f] via-[#863078] to-[#423887] text-white font-bold rounded-full text-[11px] uppercase tracking-wider hover:opacity-95 transition-all"
                       >
                         Survey
                       </button>

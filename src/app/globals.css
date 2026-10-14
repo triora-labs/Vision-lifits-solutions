@@ -2,17 +2,39 @@
 
 :root {
   --white: #ffffff;
-  --stone: #f5f5f3;
-  --ink: #19191c;
-  --charcoal: #222226;
-  --muted: #66666d;
-  --line: #dcdcdd;
-  --red: #ff334b;
-  --red-light: #ff5268;
-  --magenta: #e11d48;
-  --purple: #6366f1;
-  --brand-gradient: linear-gradient(135deg, #ff334b 0%, #f43f5e 50%, #6366f1 100%);
-  --brand-red: #ff334b;
+  --stone: #f8fafc;
+  --ink: #0f172a;
+  --charcoal: #1e293b;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  
+  /* Official Vision Lifts Logo Palette */
+  --logo-crimson: #d3313f;
+  --logo-magenta: #a22b51;
+  --logo-plum: #863078;
+  --logo-purple: #52337e;
+  --logo-indigo: #423887;
+  --brand-gradient: linear-gradient(135deg, #d3313f 0%, #863078 50%, #423887 100%);
+}
+
+.bg-logo-gradient {
+  background: linear-gradient(135deg, #d3313f 0%, #863078 50%, #423887 100%);
+}
+
+.text-logo-gradient {
+  background: linear-gradient(90deg, #d3313f 0%, #863078 50%, #423887 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-logo {
+  background: linear-gradient(135deg, #d3313f 0%, #863078 50%, #423887 100%);
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+.btn-logo:hover {
+  opacity: 0.94;
+  box-shadow: 0 8px 20px -4px rgba(113, 47, 109, 0.35);
 }
 
 @theme inline {
