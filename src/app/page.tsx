@@ -108,8 +108,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column: Bold Typography & Category Tabs (Matching Image 2) */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 text-red-600 border border-red-100 text-xs font-bold uppercase tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 text-[#ff334b] border border-rose-100 text-xs font-bold uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-[#ff334b] animate-pulse" />
                 Trusted Elevator Engineering in Telangana
               </div>
 
@@ -129,7 +129,7 @@ export default function HomePage() {
                   </svg>
                 </span>
                 <br />
-                <span className="text-red-600">Securing your journey.</span>
+                <span className="text-[#ff334b]">Securing your journey.</span>
               </h1>
 
               <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
@@ -151,12 +151,12 @@ export default function HomePage() {
                         onClick={() => setSelectedBuildingType(type.id)}
                         className={`p-3 rounded-2xl border text-center transition-all flex flex-col items-center justify-center gap-1.5 cursor-pointer ${
                           isSelected
-                            ? "border-red-600 bg-red-50/60 shadow-xs ring-1 ring-red-500"
+                            ? "border-[#ff334b] bg-rose-50/60 shadow-xs ring-1 ring-[#ff334b]/40"
                             : "border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
                         } ${idx === 4 ? "col-span-2 sm:col-span-1" : ""}`}
                       >
                         <span className="text-xl">{type.icon}</span>
-                        <span className={`text-xs font-bold ${isSelected ? "text-red-700" : "text-slate-700"}`}>
+                        <span className={`text-xs font-bold ${isSelected ? "text-[#ff334b]" : "text-slate-700"}`}>
                           {type.title}
                         </span>
                       </button>
@@ -199,7 +199,7 @@ export default function HomePage() {
                   <form onSubmit={handleLeadSubmit} className="space-y-3.5">
                     <div>
                       <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
-                        YOUR NAME <span className="text-red-500">*</span>
+                        YOUR NAME <span className="text-[#ff334b]">*</span>
                       </label>
                       <input
                         type="text"
@@ -207,7 +207,7 @@ export default function HomePage() {
                         placeholder="e.g. Ramesh Reddy"
                         value={leadForm.name}
                         onChange={(e) => setLeadForm({ ...leadForm, name: e.target.value })}
-                        className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 text-slate-800"
+                        className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ff334b]/40 text-slate-800"
                       />
                     </div>
 
@@ -218,7 +218,7 @@ export default function HomePage() {
                       <select
                         value={leadForm.buildingType}
                         onChange={(e) => setLeadForm({ ...leadForm, buildingType: e.target.value })}
-                        className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 text-slate-800"
+                        className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ff334b]/40 text-slate-800"
                       >
                         <option>Villas & Independent Homes</option>
                         <option>Residential Apartments</option>
@@ -232,7 +232,7 @@ export default function HomePage() {
                     <div className="grid grid-cols-2 gap-2.5">
                       <div>
                         <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
-                          LOCATION <span className="text-red-500">*</span>
+                          LOCATION <span className="text-[#ff334b]">*</span>
                         </label>
                         <input
                           type="text"
@@ -240,12 +240,12 @@ export default function HomePage() {
                           placeholder="Karimnagar, Warangal"
                           value={leadForm.city}
                           onChange={(e) => setLeadForm({ ...leadForm, city: e.target.value })}
-                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 text-slate-800"
+                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ff334b]/40 text-slate-800"
                         />
                       </div>
                       <div>
                         <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
-                          MOBILE NUMBER <span className="text-red-500">*</span>
+                          MOBILE NUMBER <span className="text-[#ff334b]">*</span>
                         </label>
                         <input
                           type="tel"
@@ -253,7 +253,7 @@ export default function HomePage() {
                           placeholder="+91 98484 80868"
                           value={leadForm.phone}
                           onChange={(e) => setLeadForm({ ...leadForm, phone: e.target.value })}
-                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 text-slate-800"
+                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ff334b]/40 text-slate-800"
                         />
                       </div>
                     </div>
@@ -261,7 +261,7 @@ export default function HomePage() {
                     <div className="pt-2">
                       <button
                         type="submit"
-                        className="w-full py-3.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md hover:shadow-lg transition-all"
+                        className="w-full py-3.5 bg-gradient-to-r from-[#ff334b] to-[#ff4767] hover:from-[#ff1f38] hover:to-[#f43f5e] shadow-md shadow-red-500/20 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md hover:shadow-lg transition-all"
                       >
                         Request a Call Back →
                       </button>
@@ -308,7 +308,7 @@ export default function HomePage() {
               key={index}
               className="px-4 py-2 bg-white rounded-full border border-slate-200 text-xs font-semibold text-slate-700 shadow-xs flex items-center gap-2 hover:border-slate-300 transition-colors"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-red-600" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff334b]" />
               <span>{partner}</span>
             </div>
           ))}
@@ -321,7 +321,7 @@ export default function HomePage() {
           <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-7 space-y-4">
-                <div className="inline-block px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-bold uppercase tracking-wider">
+                <div className="inline-block px-3 py-1 bg-red-100 text-[#ff334b] rounded-full text-xs font-bold uppercase tracking-wider">
                   Recommended: {activeBuilding.series}
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
@@ -346,7 +346,7 @@ export default function HomePage() {
                   <button
                     type="button"
                     onClick={() => setSurveyModalOpen(true)}
-                    className="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-all"
+                    className="px-6 py-2.5 bg-gradient-to-r from-[#ff334b] to-[#ff4767] hover:from-[#ff1f38] hover:to-[#f43f5e] shadow-md shadow-red-500/20 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-all"
                   >
                     Survey This Building
                   </button>
@@ -388,7 +388,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/solutions"
-              className="mt-4 md:mt-0 text-xs font-bold uppercase tracking-wider text-red-600 hover:text-red-700 flex items-center gap-1"
+              className="mt-4 md:mt-0 text-xs font-bold uppercase tracking-wider text-[#ff334b] hover:text-[#ff334b] flex items-center gap-1"
             >
               <span>Explore All 4 Categories</span>
               <span>→</span>
@@ -415,7 +415,7 @@ export default function HomePage() {
 
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-base font-bold text-slate-900 mb-1 group-hover:text-red-600 transition-colors">
+                    <h3 className="text-base font-bold text-slate-900 mb-1 group-hover:text-[#ff334b] transition-colors">
                       {solution.title}
                     </h3>
                     <p className="text-xs text-slate-500 mb-4 line-clamp-2">
@@ -424,7 +424,7 @@ export default function HomePage() {
                     <ul className="space-y-1.5 mb-6">
                       {solution.highlights.slice(0, 3).map((hl, i) => (
                         <li key={i} className="text-xs text-slate-600 flex items-start gap-1.5">
-                          <span className="text-red-500 font-bold">•</span>
+                          <span className="text-[#ff334b] font-bold">•</span>
                           <span>{hl}</span>
                         </li>
                       ))}
@@ -433,7 +433,7 @@ export default function HomePage() {
 
                   <Link
                     href={solution.slug}
-                    className="w-full py-2.5 text-center bg-slate-50 hover:bg-red-50 text-slate-800 hover:text-red-600 border border-slate-200 rounded-full text-xs font-bold uppercase tracking-wider transition-all"
+                    className="w-full py-2.5 text-center bg-slate-50 hover:bg-rose-50 text-slate-800 hover:text-[#ff334b] border border-slate-200 rounded-full text-xs font-bold uppercase tracking-wider transition-all"
                   >
                     View Details
                   </Link>
@@ -478,7 +478,7 @@ export default function HomePage() {
                 <div className="pt-3">
                   <Link
                     href="/production-hub"
-                    className="inline-block px-7 py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-all"
+                    className="inline-block px-7 py-3 bg-gradient-to-r from-[#ff334b] to-[#ff4767] hover:from-[#ff1f38] hover:to-[#f43f5e] shadow-md shadow-red-500/20 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-all"
                   >
                     Browse B2B Component Catalog →
                   </Link>
@@ -526,7 +526,7 @@ export default function HomePage() {
                 <div className="border-t border-slate-100 pt-3">
                   <div className="font-bold text-slate-900 text-xs sm:text-sm">{t.client}</div>
                   <div className="text-[11px] text-slate-500">{t.role}</div>
-                  <div className="text-[11px] font-semibold text-red-600 mt-0.5">
+                  <div className="text-[11px] font-semibold text-[#ff334b] mt-0.5">
                     Installed: {t.liftType}
                   </div>
                 </div>
@@ -540,7 +540,7 @@ export default function HomePage() {
       <section className="py-16 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-xl">
-            <span className="inline-block px-3 py-1 bg-red-600/20 text-red-400 border border-red-500/30 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+            <span className="inline-block px-3 py-1 bg-[#ff334b]/20 text-red-400 border border-red-500/30 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
               Ready to Upgrade Your Building?
             </span>
             <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">
@@ -553,7 +553,7 @@ export default function HomePage() {
               <button
                 type="button"
                 onClick={() => setSurveyModalOpen(true)}
-                className="px-7 py-3.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow transition-all"
+                className="px-7 py-3.5 bg-gradient-to-r from-[#ff334b] to-[#ff4767] hover:from-[#ff1f38] hover:to-[#f43f5e] shadow-md shadow-red-500/20 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow transition-all"
               >
                 Book a Free Site Survey
               </button>

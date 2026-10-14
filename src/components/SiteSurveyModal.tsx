@@ -38,7 +38,7 @@ export default function SiteSurveyModal({ isOpen, onClose }: SiteSurveyModalProp
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Banner */}
-        <div className="bg-red-600 text-white p-5 sm:p-6 relative shrink-0">
+        <div className="bg-gradient-to-r from-[#ff334b] to-[#ff4767] text-white p-5 sm:p-6 relative shrink-0">
           <button
             type="button"
             onClick={resetAndClose}
@@ -182,7 +182,7 @@ export default function SiteSurveyModal({ isOpen, onClose }: SiteSurveyModalProp
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full shadow-md hover:shadow-lg transition-all text-xs uppercase tracking-wider"
+                  className="w-full py-3.5 bg-gradient-to-r from-[#ff334b] to-[#ff4767] hover:from-[#ff1f38] hover:to-[#f43f5e] text-white font-bold rounded-full shadow-md shadow-red-500/25 transition-all text-xs uppercase tracking-wider cursor-pointer active:scale-98"
                 >
                   Confirm Free Site Survey Request
                 </button>

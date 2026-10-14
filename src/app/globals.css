@@ -7,10 +7,12 @@
   --charcoal: #222226;
   --muted: #66666d;
   --line: #dcdcdd;
-  --red: #c82037;
-  --magenta: #a52465;
-  --purple: #493080;
-  --brand-gradient: linear-gradient(90deg, var(--red), var(--magenta) 50%, var(--purple));
+  --red: #ff334b;
+  --red-light: #ff5268;
+  --magenta: #e11d48;
+  --purple: #6366f1;
+  --brand-gradient: linear-gradient(135deg, #ff334b 0%, #f43f5e 50%, #6366f1 100%);
+  --brand-red: #ff334b;
 }
 
 @theme inline {
