@@ -457,28 +457,29 @@ export default function Navbar() {
             </div>
           </div>
         </div>
+      </header>
 
-        {/* FULL-SCREEN Mobile Navigation Menu (Zero Left Slivers or Glitches) */}
-        {mobileMenuOpen && (
-          <div className="fixed inset-0 w-full h-full bg-white z-50 flex flex-col justify-between overflow-y-auto animate-in fade-in duration-200">
-            {/* Header: Full-width, Logo on left, Round Close Button on right */}
-            <div>
-              <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between bg-white shrink-0">
-                <Link
-                  href="/"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center"
-                >
-                  <div className="relative h-12 w-44">
-                    <Image
-                      src="/images/vision-lifts-logo.png"
-                      alt="Vision Lifts & Solutions"
-                      fill
-                      className="object-contain object-left"
-                      priority
-                    />
-                  </div>
-                </Link>
+      {/* FULL-SCREEN Mobile Navigation Menu (Moved outside <header> to escape backdrop-filter containing block) */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 w-full h-full bg-white z-[9999] flex flex-col justify-between overflow-y-auto">
+          {/* Header & Navigation Links */}
+          <div className="w-full">
+            <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between bg-white shrink-0 sticky top-0 z-20">
+              <Link
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center"
+              >
+                <div className="relative h-12 w-44">
+                  <Image
+                    src="/images/vision-lifts-logo.png"
+                    alt="Vision Lifts & Solutions"
+                    fill
+                    className="object-contain object-left"
+                    priority
+                  />
+                </div>
+              </Link>
 
                 <button
                   type="button"
@@ -772,7 +773,6 @@ export default function Navbar() {
             </div>
           </div>
         )}
-      </header>
 
       <SiteSurveyModal
         isOpen={surveyModalOpen}
