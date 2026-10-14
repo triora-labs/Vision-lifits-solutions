@@ -1,435 +1,577 @@
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
+import {
+  COMPANY_INFO,
+  SOLUTIONS_DATA,
+  PROJECTS_DATA,
+  SAFETY_FEATURES_DATA,
+  TESTIMONIALS_DATA,
+} from "@/data/siteData";
+import SiteSurveyModal from "@/components/SiteSurveyModal";
 
-const solutions = [
-  {
-    title: "Residential Elevators",
-    description:
-      "Bring effortless access and a refined finish to villas, apartments and private residences.",
-    details: "Compact layouts · Custom cabin finishes · Home accessibility",
-    image: "/images/residential.png",
-    alt: "Glass elevator in a contemporary residence",
-  },
-  {
-    title: "Commercial Elevators",
-    description:
-      "Confident everyday movement for offices, retail destinations and high-traffic buildings.",
-    details: "Passenger-flow planning · Configurable capacity · Smart controls",
-    image: "/images/commercial.png",
-    alt: "Elevator lobby in a modern commercial building",
-  },
-  {
-    title: "Hospital Elevators",
-    description:
-      "Thoughtfully planned access for patient movement, care teams and essential hospital operations.",
-    details: "Stretcher-friendly layouts · Precise levelling · Priority controls",
-    image: "/images/hospital.png",
-    alt: "Bright lift lobby in a healthcare building",
-  },
-  {
-    title: "Industrial / Goods Elevators",
-    description:
-      "Practical, robust vertical transport for goods, equipment and demanding working environments.",
-    details: "Load-specific planning · Durable finishes · Wide-access options",
-    image: "/images/industrial.png",
-    alt: "Freight elevator serving an industrial facility",
-  },
-];
+export default function HomePage() {
+  const [surveyModalOpen, setSurveyModalOpen] = useState(false);
+  const [selectedBuildingType, setSelectedBuildingType] = useState<string>("villa");
 
-const values = [
-  ["Advanced Engineering", "Considered design, precise planning and controls matched to your building."],
-  ["Safety First", "Safety-led decisions, from system selection through installation and upkeep."],
-  ["Premium Quality", "Carefully selected materials and finishes with attention to every detail."],
-  ["Professional Installation", "A coordinated installation process with clear communication at every stage."],
-  ["Reliable AMC Support", "Planned maintenance and practical support throughout the service lifecycle."],
-  ["Customized Solutions", "Flexible configurations shaped by your space, users and architectural vision."],
-];
+  // Hero Lead Form State
+  const [leadForm, setLeadForm] = useState({
+    name: "",
+    buildingType: "Villas & Independent Homes",
+    city: "Karimnagar",
+    phone: "",
+  });
+  const [leadSubmitted, setLeadSubmitted] = useState(false);
 
-const safetySystems = [
-  ["Emergency Alarm", "A clear way to call for assistance."],
-  ["Automatic Rescue Device", "A planned response to power interruption."],
-  ["Overload Protection", "Monitors the permitted carrying load."],
-  ["Door Obstruction Detection", "Senses obstacles in the door path."],
-  ["Emergency Lighting", "Maintains visibility when power is lost."],
-  ["Overspeed Protection", "Monitors travel speed for safe operation."],
-  ["Safety Brake System", "Protective braking for critical conditions."],
-  ["Precision Door Control", "Controlled, coordinated door movement."],
-];
+  const handleLeadSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setLeadSubmitted(true);
+  };
 
-const projects = [
-  {
-    type: "Residential",
-    name: "Courtyard Residence",
-    description: "A home-access solution planned to complement a contemporary villa and its daily rhythm.",
-    image: "/images/project-residence.png",
-    alt: "Contemporary residence with an elevator",
-  },
-  {
-    type: "Commercial",
-    name: "Urban Business Centre",
-    description: "Passenger movement considered around busy arrival periods and multi-floor office use.",
-    image: "/images/project-commercial.png",
-    alt: "Modern business centre entrance",
-  },
-  {
-    type: "Hospital",
-    name: "Care & Wellness Campus",
-    description: "An accessible vertical-transport concept for patients, caregivers and clinical teams.",
-    image: "/images/project-hospital.png",
-    alt: "Healthcare campus exterior",
-  },
-  {
-    type: "Industrial",
-    name: "Industrial Logistics Hub",
-    description: "Goods movement planned around the loading needs and workflow of a modern facility.",
-    image: "/images/project-industrial.png",
-    alt: "Industrial logistics building",
-  },
-];
+  const buildingTypes = [
+    {
+      id: "villa",
+      title: "Villas & Homes",
+      icon: "🏡",
+      series: "VL-Home Luxe Series",
+      desc: "Zero machine room, minimal 150mm pit or ramp, runs on single-phase 220V household electricity. Perfect for luxury duplexes and existing homes.",
+      highlights: ["Pitless / Shallow 150mm Pit", "Whisper Silent <48 dB", "Glass / Rose Gold Cabin", "ARD Auto-Rescue Included"],
+      link: "/solutions#residential",
+      image: "/images/residential.png",
+    },
+    {
+      id: "apartment",
+      title: "Apartments",
+      icon: "🏢",
+      series: "VL-Commercial Gearless MRL",
+      desc: "Fast, energy-efficient passenger movement designed for multi-family buildings and gated societies. Regenerative drive saves 40% energy.",
+      highlights: ["MRL Space Saving", "Up to 1.75 m/s Speed", "Durable SS 304 Finish", "Full Collective Dispatch"],
+      link: "/solutions#residential",
+      image: "/images/hero-lobby.png",
+    },
+    {
+      id: "commercial",
+      title: "Commercial",
+      icon: "🏬",
+      series: "VL-Commercial Gearless Series",
+      desc: "Engineered for intense passenger flow during rush hours. Smart group supervisory controls, RFID access, and luxury glass/stainless cabins.",
+      highlights: ["Heavy Duty 16-20 Pax", "TFT Screen Indicators", "Regenerative Power", "Infrared Light Curtain"],
+      link: "/solutions#commercial",
+      image: "/images/commercial.png",
+    },
+    {
+      id: "hospital",
+      title: "Hospitals",
+      icon: "🏥",
+      series: "VL-Medicare Stretcher Lift",
+      desc: "Deep car dimensions accommodating intensive care stretchers and beds. S-curve smooth leveling prevents jerks for critical patients.",
+      highlights: ["Stretcher / ICU Bed Depth", "Millimeter Leveling Precision", "Priority Medical Override", "Anti-microbial SS Finish"],
+      link: "/solutions#hospital",
+      image: "/images/hospital.png",
+    },
+    {
+      id: "industrial",
+      title: "Industrial",
+      icon: "🏭",
+      series: "VL-Heavy Freight Series",
+      desc: "Built to withstand forklift loading and pallet trucks. Reinforced structural steel sling and checkered steel flooring up to 5,000 kg.",
+      highlights: ["500 kg to 5,000 kg Payload", "Chequered Steel Flooring", "Bi-Parting Steel Gates", "Impact Absorbing Buffers"],
+      link: "/solutions#industrial",
+      image: "/images/industrial.png",
+    },
+  ];
 
-const services = [
-  ["Preventive Maintenance", "Scheduled checks and adjustments to help keep everyday performance consistent."],
-  ["Breakdown Support", "Technical troubleshooting and a clear support process when operation is interrupted."],
-  ["Modernization & Upgrades", "Thoughtful improvements to controls, finishes and ageing equipment."],
-  ["Spare Parts", "Support for compatible replacement parts selected for the installed system."],
-  ["Inspection & Support", "Technical inspections, practical guidance and documentation for your building team."],
-  ["Annual Maintenance Contract", "A structured maintenance plan tailored to the system, usage and service requirements."],
-];
+  const activeBuilding = buildingTypes.find((b) => b.id === selectedBuildingType) || buildingTypes[0];
 
-const testimonials = [
-  "The team helped us think through the right fit for our home, with clear guidance on space, finishes and everyday use.",
-  "A well-coordinated process, from planning to handover. We valued the attention to detail and straightforward communication.",
-  "Having a planned maintenance approach gives our building team greater confidence in day-to-day elevator operation.",
-];
+  const partners = [
+    "Vasavi Group",
+    "Trends Retail",
+    "Vamsiram Builders",
+    "My Home Infra",
+    "UrbanX Spaces",
+    "Croma Electronics",
+    "Muppa Projects",
+    "Rajapushpa Properties",
+    "APR Group",
+    "DSR Infrastructure",
+    "Zudio Stores",
+    "RV Nirmaan",
+  ];
 
-function ArrowIcon() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
-      <path d="M5 15 15 5M6 5h9v9" stroke="currentColor" strokeWidth="1.5" />
-    </svg>
-  );
-}
-
-function Brand({ footer = false }: { footer?: boolean }) {
-  return (
-    <a className={`brand${footer ? " brand--footer" : ""}`} href="#top" aria-label="Vision Lifts & Solutions home">
-      <Image
-        className="brand__logo"
-        src="/images/vision-lifts-logo.png"
-        alt="Vision Lifts & Solutions"
-        width={2160}
-        height={1440}
-        priority={!footer}
-      />
-    </a>
-  );
-}
-
-function SectionHeading({
-  eyebrow,
-  title,
-  description,
-}: {
-  eyebrow: string;
-  title: string;
-  description?: string;
-}) {
-  return (
-    <div className="section-heading">
-      <p className="eyebrow">{eyebrow}</p>
-      <h2>{title}</h2>
-      {description ? <p className="section-heading__copy">{description}</p> : null}
-    </div>
-  );
-}
-
-function ActionLink({
-  children,
-  href,
-  secondary = false,
-}: {
-  children: React.ReactNode;
-  href: string;
-  secondary?: boolean;
-}) {
-  return (
-    <a className={`action${secondary ? " action--secondary" : ""}`} href={href}>
-      <span>{children}</span>
-      <ArrowIcon />
-    </a>
-  );
-}
-
-export default function Home() {
-  return (
-    <main id="top">
-      <section className="hero" aria-labelledby="hero-title">
-        <header className="site-header">
-          <Brand />
-          <nav className="desktop-nav" aria-label="Main navigation">
-            <a className="nav-link nav-link--active" href="#top">Home</a>
-            <a className="nav-link" href="#why-vision">About Us</a>
-            <a className="nav-link" href="#solutions">Products</a>
-            <a className="nav-link" href="#services">Services</a>
-            <a className="nav-link" href="#projects">Projects</a>
-            <a className="nav-link" href="#safety">Safety &amp; Technology</a>
-            <a className="nav-link" href="#contact">Contact</a>
-          </nav>
-          <div className="header-actions">
-            <span className="header-region">South India</span>
-            <ActionLink href="#contact">Get a Quote</ActionLink>
-          </div>
-          <details className="mobile-menu">
-            <summary aria-label="Open navigation menu"><span /><span /></summary>
-            <nav aria-label="Mobile navigation">
-              <a href="#why-vision">About Us</a>
-              <a href="#solutions">Products</a>
-              <a href="#services">Services</a>
-              <a href="#projects">Projects</a>
-              <a href="#safety">Safety &amp; Technology</a>
-              <a href="#contact">Contact</a>
-            </nav>
-          </details>
-        </header>
-        <div className="brand-rule" />
-        <div className="hero__body">
-          <div className="hero__copy">
-            <p className="eyebrow">Vision Lifts &amp; Solutions / South India</p>
-            <h1 id="hero-title">Elevating Spaces.<br />Moving People.<br />Building Trust.</h1>
-            <p className="hero__description">
-              Reliable elevator solutions engineered for homes, commercial buildings, hospitals and industrial applications.
-            </p>
-            <div className="hero__actions">
-              <ActionLink href="#contact">Get a Free Consultation</ActionLink>
-              <ActionLink href="#solutions" secondary>Explore Elevators</ActionLink>
-            </div>
-            <div className="trust-promise">
-              <span className="brand-rule__short" />
-              <p>Designed for safety. Built for performance. Supported for the long run.</p>
-            </div>
-          </div>
-          <figure className="hero__image">
-            <Image
-              src="/images/hero-lobby.png"
-              alt="Modern elevator lobby with warm architectural finishes"
-              fill
-              priority
-              sizes="(max-width: 760px) 100vw, 50vw"
-            />
-            <figcaption>
-              <span>Engineering × Architecture</span>
-              <strong>Designed to belong. Built to perform.</strong>
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section className="trust-strip" aria-label="Company information">
-        <div className="trust-strip__stats">
-          {[["10+", "Years of Experience"], ["500+", "Installations"], ["24/7", "Service Support"], ["100%", "Safety Focus"]].map(([value, label]) => (
-            <div className="stat" key={label}>
-              <strong>{value}</strong>
-              <span>{label}</span>
-            </div>
-          ))}
-        </div>
-        <div className="trust-strip__network">
-          <span className="pin-mark" aria-hidden="true">+</span>
-          <span>South India<br />Service Network</span>
-        </div>
-        <p className="editorial-note">Experience, installation and service figures are illustrative placeholders pending confirmation.</p>
-      </section>
-
-      <section className="section solutions" id="solutions">
-        <SectionHeading
-          eyebrow="01 / Our solutions"
-          title="Elevator Solutions for Every Need"
-          description="From a private residence to a complex public building, the right elevator starts with the way your space is used."
-        />
-        <div className="solution-grid">
-          {solutions.map((solution) => (
-            <article className="solution-card" key={solution.title}>
-              <div className="solution-card__image">
-                <Image src={solution.image} alt={solution.alt} fill sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 44vw" />
+    <div className="flex flex-col min-h-screen bg-white">
+      {/* 1. HERO SECTION (White Background, Inspired by Image 2 lmbib.com) */}
+      <section className="bg-white py-14 lg:py-20 border-b border-slate-100 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Column: Bold Typography & Category Tabs (Matching Image 2) */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 text-red-600 border border-red-100 text-xs font-bold uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
+                Trusted Elevator Engineering in Telangana
               </div>
-              <div className="solution-card__body">
-                <h3>{solution.title}</h3>
-                <p>{solution.description}</p>
-                <p className="solution-card__details">{solution.details}</p>
-                <a className="text-link" href="#contact">Explore Solution <ArrowIcon /></a>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12]">
+                Elevator mobility <br />
+                built on{" "}
+                <span className="relative inline-block">
+                  <span className="text-slate-900">trust.</span>
+                  {/* Organic yellow curved accent underline like Image 2 */}
+                  <svg
+                    className="absolute -bottom-2 left-0 w-full h-3 text-amber-400"
+                    viewBox="0 0 100 12"
+                    preserveAspectRatio="none"
+                    fill="currentColor"
+                  >
+                    <path d="M0,8 Q50,0 100,6 L100,10 Q50,4 0,11 Z" />
+                  </svg>
+                </span>
+                <br />
+                <span className="text-red-600">Securing your journey.</span>
+              </h1>
+
+              <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
+                Elevator design, precision installation, and 24/7 modernization built on engineering integrity, local accountability, and client focus across Karimnagar, Hyderabad, and Telangana.
+              </p>
+
+              {/* 5 Rounded Category Pills at bottom of hero (Matching Image 2 layout) */}
+              <div className="pt-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">
+                  Select Your Building Type:
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-2.5">
+                  {buildingTypes.map((type, idx) => {
+                    const isSelected = selectedBuildingType === type.id;
+                    return (
+                      <button
+                        key={type.id}
+                        type="button"
+                        onClick={() => setSelectedBuildingType(type.id)}
+                        className={`p-3 rounded-2xl border text-center transition-all flex flex-col items-center justify-center gap-1.5 cursor-pointer ${
+                          isSelected
+                            ? "border-red-600 bg-red-50/60 shadow-xs ring-1 ring-red-500"
+                            : "border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
+                        } ${idx === 4 ? "col-span-2 sm:col-span-1" : ""}`}
+                      >
+                        <span className="text-xl">{type.icon}</span>
+                        <span className={`text-xs font-bold ${isSelected ? "text-red-700" : "text-slate-700"}`}>
+                          {type.title}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
-            </article>
-          ))}
+            </div>
+
+            {/* Right Column: Clean White Lead Form Card (Matching Image 2) */}
+            <div className="lg:col-span-5">
+              <div className="bg-slate-50/90 border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-xl relative backdrop-blur-sm">
+                <div className="mb-5">
+                  <h3 className="text-xl font-extrabold text-slate-900 tracking-tight">
+                    Get Free Site Survey & Quote
+                  </h3>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Share your details — Ramesh Vilasagar or our senior elevator engineer will call you back.
+                  </p>
+                </div>
+
+                {leadSubmitted ? (
+                  <div className="text-center py-8">
+                    <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl font-bold">
+                      ✓
+                    </div>
+                    <h4 className="text-lg font-bold text-slate-900 mb-1">Request Received!</h4>
+                    <p className="text-xs text-slate-600 mb-5">
+                      Thank you, <strong>{leadForm.name}</strong>. We will coordinate your free site survey in <strong>{leadForm.city}</strong> shortly.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setLeadSubmitted(false)}
+                      className="px-6 py-2.5 bg-slate-900 text-white rounded-full text-xs font-bold uppercase tracking-wider"
+                    >
+                      Submit Another Query
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleLeadSubmit} className="space-y-3.5">
+                    <div>
+                      <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
+                        YOUR NAME <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g. Ramesh Reddy"
+                        value={leadForm.name}
+                        onChange={(e) => setLeadForm({ ...leadForm, name: e.target.value })}
+                        className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 text-slate-800"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
+                        BUILDING / PROJECT TYPE
+                      </label>
+                      <select
+                        value={leadForm.buildingType}
+                        onChange={(e) => setLeadForm({ ...leadForm, buildingType: e.target.value })}
+                        className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 text-slate-800"
+                      >
+                        <option>Villas & Independent Homes</option>
+                        <option>Residential Apartments</option>
+                        <option>Commercial Complex / Offices</option>
+                        <option>Hospitals & Healthcare</option>
+                        <option>Industrial Plant / Warehouses</option>
+                        <option>Modernization of Old Lift</option>
+                      </select>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2.5">
+                      <div>
+                        <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
+                          LOCATION <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          placeholder="Karimnagar, Warangal"
+                          value={leadForm.city}
+                          onChange={(e) => setLeadForm({ ...leadForm, city: e.target.value })}
+                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 text-slate-800"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
+                          MOBILE NUMBER <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="tel"
+                          required
+                          placeholder="+91 98484 80868"
+                          value={leadForm.phone}
+                          onChange={(e) => setLeadForm({ ...leadForm, phone: e.target.value })}
+                          className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 text-slate-800"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        className="w-full py-3.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md hover:shadow-lg transition-all"
+                      >
+                        Request a Call Back →
+                      </button>
+                      <p className="text-center text-[11px] text-slate-400 mt-2">
+                        🔒 Zero spam. Direct engineer consultation.
+                      </p>
+                    </div>
+                  </form>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
-        <p className="editorial-note">Features are indicative and configurable. Final capacity, dimensions, performance and specifications depend on the building assessment.</p>
       </section>
 
-      <section className="engineering section" id="engineering">
-        <figure className="engineering__image">
-          <Image src="/images/cabin-study.png" alt="Contemporary elevator cabin with warm wood and metal details" fill sizes="(max-width: 900px) 100vw, 48vw" />
-          <figcaption>Materials, movement and detail — in harmony.</figcaption>
-        </figure>
-        <div className="engineering__copy">
-          <SectionHeading eyebrow="02 / A considered fit" title="Engineered Around Your Building" />
-          <p className="body-copy">No two buildings move the same way. We plan each configuration around building height, passenger requirements, shaft dimensions, usage and architecture — balancing practical engineering with the character of your space.</p>
-          <ul className="feature-list">
-            {["Smooth and quiet travel", "Energy-efficient operation", "Advanced control systems", "Precision floor levelling", "Modern cabin finishes", "Safety-focused design"].map((item) => (
-              <li key={item}><span aria-hidden="true">✓</span>{item}</li>
+      {/* 2. STATS STRIP (Clean White) */}
+      <section className="bg-white border-b border-slate-100 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            {COMPANY_INFO.stats.map((stat, i) => (
+              <div key={i} className="pt-4 md:pt-0">
+                <div className="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+                  {stat.value}
+                </div>
+                <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">
+                  {stat.label}
+                </div>
+              </div>
             ))}
-          </ul>
-          <ActionLink href="#contact">Talk to Our Experts</ActionLink>
-        </div>
-      </section>
-
-      <section className="section why" id="why-vision">
-        <SectionHeading
-          eyebrow="03 / Why Vision"
-          title="The Details Make the Difference."
-          description="Engineering discipline. Thoughtful service. A solution you can feel confident in, every day."
-        />
-        <div className="value-grid">
-          {values.map(([title, description], index) => (
-            <article className="value-item" key={title}>
-              <span className="value-item__number">0{index + 1}</span>
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="safety section" id="safety">
-        <span className="safety__rule" />
-        <div className="safety__intro">
-          <SectionHeading
-            eyebrow="04 / Safety & technology"
-            title="Safety Is Built Into Every Journey"
-            description="Protection is not an afterthought. We consider the complete journey — from controlled movement and reliable doors to a prepared response when it matters."
-          />
-          <div className="safety__image">
-            <Image src="/images/safety-panel.png" alt="Elevator control panel and safety controls" fill sizes="(max-width: 900px) 100vw, 34vw" />
           </div>
         </div>
-        <div className="safety-grid">
-          {safetySystems.map(([title, description], index) => (
-            <article className="safety-item" key={title}>
-              <span className="safety-item__index">0{index + 1}</span>
-              <div><h3>{title}</h3><p>{description}</p></div>
-            </article>
-          ))}
-        </div>
-        <p className="editorial-note editorial-note--dark">Safety-system availability and configuration are confirmed during technical assessment and final specification.</p>
       </section>
 
-      <section className="section projects" id="projects">
-        <SectionHeading
-          eyebrow="05 / Spaces in motion"
-          title="Projects That Move People"
-          description="A look at the kinds of spaces our solutions can serve — from intimate homes to ambitious commercial environments."
-        />
-        <div className="project-filters" aria-label="Project categories">
-          <span className="filter-chip filter-chip--active">All</span>
-          <span className="filter-chip">Residential</span>
-          <span className="filter-chip">Commercial</span>
-          <span className="filter-chip">Hospital</span>
-          <span className="filter-chip">Industrial</span>
+      {/* 3. PARTNERS LOGO STRIP */}
+      <section className="bg-slate-50 py-8 border-b border-slate-100 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3 text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
+            Trusted by Leading Developers, Institutions & Villa Owners Across South India
+          </p>
         </div>
-        <p className="editorial-note">Illustrative project placeholders, not a verified portfolio. Names, locations, imagery and descriptions await confirmation.</p>
-        <div className="project-grid">
-          {projects.map((project) => (
-            <article className="project-card" key={project.name}>
-              <div className="project-card__image">
-                <Image src={project.image} alt={project.alt} fill sizes="(max-width: 720px) 100vw, 45vw" />
+        <div className="flex overflow-x-auto gap-2.5 py-2 px-4 max-w-7xl mx-auto justify-center flex-wrap">
+          {partners.map((partner, index) => (
+            <div
+              key={index}
+              className="px-4 py-2 bg-white rounded-full border border-slate-200 text-xs font-semibold text-slate-700 shadow-xs flex items-center gap-2 hover:border-slate-300 transition-colors"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-red-600" />
+              <span>{partner}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 4. ACTIVE BUILDING SHOWCASE (Clean White & Slate) */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7 space-y-4">
+                <div className="inline-block px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-bold uppercase tracking-wider">
+                  Recommended: {activeBuilding.series}
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                  {activeBuilding.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  {activeBuilding.desc}
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+                  {activeBuilding.highlights.map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-xs text-slate-800 font-medium">
+                      <span className="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-[10px] font-bold">
+                        ✓
+                      </span>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-4 flex flex-wrap gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setSurveyModalOpen(true)}
+                    className="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-all"
+                  >
+                    Survey This Building
+                  </button>
+                  <Link
+                    href={activeBuilding.link}
+                    className="px-6 py-2.5 bg-white border border-slate-300 text-slate-800 font-bold text-xs uppercase tracking-wider rounded-full hover:bg-slate-100 transition-all"
+                  >
+                    View Specifications →
+                  </Link>
+                </div>
               </div>
-              <div className="project-card__meta"><span>{project.type}</span><span>Illustrative</span></div>
-              <h3>{project.name}</h3>
-              <p className="project-card__location">City, State — editable location</p>
-              <p className="body-copy">{project.description}</p>
-            </article>
-          ))}
-        </div>
-        <div className="section-action"><ActionLink href="#contact" secondary>View All Projects</ActionLink></div>
-      </section>
 
-      <section className="section services" id="services">
-        <SectionHeading
-          eyebrow="06 / Service & AMC"
-          title="Beyond Installation. We Keep You Moving."
-          description="The relationship does not end at handover. We help you care for your elevator throughout its working life, with service options planned around your building."
-        />
-        <div className="service-grid">
-          {services.map(([title, description], index) => (
-            <article className="service-card" key={title}>
-              <span className="service-card__index">0{index + 1}</span>
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </article>
-          ))}
-        </div>
-        <div className="section-action"><ActionLink href="#contact">Request Service</ActionLink></div>
-      </section>
-
-      <section className="section voices" id="voices">
-        <SectionHeading eyebrow="07 / The customer experience" title="Trusted by Customers" />
-        <p className="editorial-note">Editable sample testimonials awaiting approval. Quotes, customer names, companies and project details are placeholders, not published endorsements.</p>
-        <div className="testimonial-grid">
-          {testimonials.map((quote, index) => (
-            <blockquote className="testimonial" key={quote}>
-              <span className="testimonial__quote" aria-hidden="true">“</span>
-              <p>{quote}</p>
-              <span className="testimonial__rule" />
-              <footer>
-                <strong>[Customer name]</strong>
-                <span>{index === 0 ? "Residential project / company" : index === 1 ? "Commercial project / company" : "AMC customer / company"}</span>
-                <span>[City, State]</span>
-              </footer>
-            </blockquote>
-          ))}
-        </div>
-      </section>
-
-      <section className="consultation" id="contact">
-        <span className="consultation__rule" />
-        <div className="consultation__content">
-          <div>
-            <p className="eyebrow">Let’s plan your next level</p>
-            <h2>Looking for the Right Elevator for Your Building?</h2>
-            <p>Tell us about your project and our team will help you choose the right elevator solution.</p>
-          </div>
-          <div className="consultation__actions">
-            <ActionLink href="#contact-details">Request a Quote</ActionLink>
-            <a className="action action--light" href="#contact-details">Contact Details <ArrowIcon /></a>
+              <div className="lg:col-span-5">
+                <div className="relative h-72 sm:h-80 rounded-2xl overflow-hidden shadow border border-slate-200 bg-slate-900">
+                  <Image
+                    src={activeBuilding.image}
+                    alt={activeBuilding.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <footer className="site-footer" id="contact-details">
-        <div className="footer-grid">
-          <div className="footer-about">
-            <Brand footer />
-            <p>Thoughtfully engineered elevator solutions for homes, businesses, healthcare and industry. From the first conversation to long-term care.</p>
+      {/* 5. CORE SOLUTIONS CARDS (Clean White) */}
+      <section className="py-16 bg-slate-50 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500 bg-white border border-slate-200 px-3 py-1 rounded-full">
+                Engineering Range
+              </span>
+              <h2 className="text-3xl font-extrabold text-slate-900 mt-2 tracking-tight">
+                Our Elevator Solutions
+              </h2>
+            </div>
+            <Link
+              href="/solutions"
+              className="mt-4 md:mt-0 text-xs font-bold uppercase tracking-wider text-red-600 hover:text-red-700 flex items-center gap-1"
+            >
+              <span>Explore All 4 Categories</span>
+              <span>→</span>
+            </Link>
           </div>
-          <div className="footer-column">
-            <h2>Quick Links</h2>
-            <a href="#top">Home</a><a href="#why-vision">About Us</a><a href="#solutions">Products</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#safety">Safety &amp; Technology</a><a href="#contact">Contact</a>
-          </div>
-          <div className="footer-column">
-            <h2>Solutions</h2>
-            {solutions.map((solution) => <a href="#solutions" key={solution.title}>{solution.title}</a>)}
-            <a href="#services">Service &amp; AMC</a>
-          </div>
-          <div className="footer-column footer-contact">
-            <h2>Contact</h2>
-            <p><span>Phone</span>[Add phone number]</p>
-            <p><span>Email</span>[Add email address]</p>
-            <p><span>Address</span>[Add registered office address]</p>
-            <small>Contact details are placeholders and must be confirmed before launch.</small>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {SOLUTIONS_DATA.map((solution) => (
+              <div
+                key={solution.id}
+                className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col group"
+              >
+                <div className="relative h-48 overflow-hidden bg-slate-100">
+                  <Image
+                    src={solution.image}
+                    alt={solution.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-3 left-3 bg-white/95 text-slate-900 px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-sm">
+                    {solution.category}
+                  </div>
+                </div>
+
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-base font-bold text-slate-900 mb-1 group-hover:text-red-600 transition-colors">
+                      {solution.title}
+                    </h3>
+                    <p className="text-xs text-slate-500 mb-4 line-clamp-2">
+                      {solution.subtitle}
+                    </p>
+                    <ul className="space-y-1.5 mb-6">
+                      {solution.highlights.slice(0, 3).map((hl, i) => (
+                        <li key={i} className="text-xs text-slate-600 flex items-start gap-1.5">
+                          <span className="text-red-500 font-bold">•</span>
+                          <span>{hl}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <Link
+                    href={solution.slug}
+                    className="w-full py-2.5 text-center bg-slate-50 hover:bg-red-50 text-slate-800 hover:text-red-600 border border-slate-200 rounded-full text-xs font-bold uppercase tracking-wider transition-all"
+                  >
+                    View Details
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="footer-legal">
-          <span>© 2026 Vision Lifts &amp; Solutions. All Rights Reserved.</span>
-          <span>Engineered for every journey.</span>
+      </section>
+
+      {/* 6. B2B PRODUCTION HUB (Clean White & Slate, NOT Black!) */}
+      <section className="py-16 bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-red-50/50 to-slate-50 rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-7 space-y-4">
+                <span className="inline-block px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-bold uppercase tracking-wider">
+                  B2B Manufacturing & Raw Materials Hub
+                </span>
+                <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+                  Supplying High-Grade Lift Components Across South India
+                </h2>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  Beyond end-user installations, <strong>Vision Lifts & Solutions</strong> operates an active manufacturing and component distribution catalog in Karimnagar. We supply gearless traction machines, VVVF micro-processor controllers, automatic door operators, guide rails, and custom designer cabins to other elevator service businesses and contractors.
+                </p>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs">
+                  <div className="bg-white p-3 rounded-2xl border border-slate-200 shadow-xs">
+                    <div className="font-bold text-slate-900">PMSM Machines</div>
+                    <div className="text-slate-500 text-[11px]">320kg to 2000kg Gearless</div>
+                  </div>
+                  <div className="bg-white p-3 rounded-2xl border border-slate-200 shadow-xs">
+                    <div className="font-bold text-slate-900">VVVF Controllers</div>
+                    <div className="text-slate-500 text-[11px]">Integrated ARD & CAN-bus</div>
+                  </div>
+                  <div className="bg-white p-3 rounded-2xl border border-slate-200 shadow-xs">
+                    <div className="font-bold text-slate-900">Modular SS Cabins</div>
+                    <div className="text-slate-500 text-[11px]">SS 304 Titanium & Glass</div>
+                  </div>
+                </div>
+
+                <div className="pt-3">
+                  <Link
+                    href="/production-hub"
+                    className="inline-block px-7 py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-all"
+                  >
+                    Browse B2B Component Catalog →
+                  </Link>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5">
+                <div className="relative h-80 rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
+                  <Image
+                    src="/images/cabin-study.png"
+                    alt="Elevator Manufacturing & Cabin Assembly"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </footer>
-    </main>
+      </section>
+
+      {/* 7. TESTIMONIALS (Clean White Cards) */}
+      <section className="py-16 bg-slate-50 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 bg-white border border-slate-200 px-3 py-1 rounded-full">
+              Verified Feedback
+            </span>
+            <h2 className="text-3xl font-extrabold text-slate-900 mt-2 tracking-tight">
+              Trusted by Homeowners, Builders & Healthcare Leaders
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {TESTIMONIALS_DATA.map((t, idx) => (
+              <div
+                key={idx}
+                className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between"
+              >
+                <div>
+                  <p className="text-xs sm:text-sm text-slate-700 italic leading-relaxed mb-6">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                </div>
+                <div className="border-t border-slate-100 pt-3">
+                  <div className="font-bold text-slate-900 text-xs sm:text-sm">{t.client}</div>
+                  <div className="text-[11px] text-slate-500">{t.role}</div>
+                  <div className="text-[11px] font-semibold text-red-600 mt-0.5">
+                    Installed: {t.liftType}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. FINAL ACTION BANNER (White / Soft Accent with Rounded Buttons) */}
+      <section className="py-16 bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-xl">
+            <span className="inline-block px-3 py-1 bg-red-600/20 text-red-400 border border-red-500/30 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+              Ready to Upgrade Your Building?
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">
+              Schedule Your Free On-Site Inspection Today
+            </h2>
+            <p className="text-slate-300 text-sm max-w-xl mx-auto mb-6 leading-relaxed">
+              Our engineering team based on Gandhi Road, Karimnagar will visit your site, measure hoistway dimensions, evaluate power availability, and prepare a custom blueprint & quote within 24 hours.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <button
+                type="button"
+                onClick={() => setSurveyModalOpen(true)}
+                className="px-7 py-3.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow transition-all"
+              >
+                Book a Free Site Survey
+              </button>
+              <a
+                href={`tel:${COMPANY_INFO.phoneRaw}`}
+                className="px-7 py-3.5 bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-bold text-xs uppercase tracking-wider rounded-full transition-all"
+              >
+                Call +91 98484 80868
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <SiteSurveyModal
+        isOpen={surveyModalOpen}
+        onClose={() => setSurveyModalOpen(false)}
+      />
+    </div>
   );
 }
